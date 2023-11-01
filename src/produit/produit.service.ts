@@ -72,9 +72,9 @@ export class ProduitService {
   async remove(id: number) {
     try {
       const found = await this.findOne(id);
-      const nomProduit = found.nom;
-      await this.produitRepository.remove(found);
-      return `Le produit: ${nomProduit} à bien été supprimé.`;
+
+      const response = await this.produitRepository.remove(found);
+      return response;
     } catch (error) {
       throw new InternalServerErrorException(
         `erreur de la suppression : ${error.message}`,
