@@ -18,16 +18,10 @@ export class CreateProduitDto {
 
   @IsNumber()
   @IsNotEmpty()
-  @Matches(/^[0-9]+(.[0-9]+)?$/, {
-    message: 'le prix ne peux contenir que des chiffres ex: 12.34 ou 1234.  ',
-  })
   prix: number;
 
   @IsInt()
   @IsNotEmpty()
-  @Matches(/^[0-9]+$/, {
-    message: 'la quantité ne peux contenir que des chiffres ex: 1234.  ',
-  })
   quantite: number;
 
   @IsInt()
